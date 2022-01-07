@@ -6,14 +6,17 @@
 })
 
 <body>
-	@@include("html/header.html",{
+	<div class="wrapper">
+		@@include("html/header.html",{
+		})
+		<main class="page">
+
+		</main>
+		@@include("html/footer.html",{
+		})
+	</div>
+	@@include("html/js.html",{
 	})
-	<main>
-		<img src="@img/" alt="">
-	</main>
-	@@include("html/footer.html",{
-	})
-	<script src="js/app.min.js"></script>
 </body>
 
 </html>

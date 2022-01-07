@@ -48,12 +48,15 @@ export const scss = () => {
         )
       )
       // Раскомментировать если нужен не сжатый дубликат файла стилей
-      .pipe(app.gulp.dest(app.path.build.css))
+      //.pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.gulpIf(app.isBuild, GulpCleanCss()))
       .pipe(
-        rename({
-          extname: ".min.css",
-        })
+        app.plugins.gulpIf(
+          app.isBuild,
+          rename({
+            extname: ".min.css",
+          })
+        )
       )
       .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browsersync.stream())
