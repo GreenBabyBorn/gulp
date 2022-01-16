@@ -45,7 +45,7 @@ export const ttfToWoff = () => {
 
 export const fontsStyle = () => {
   // Файл стилей подключения шрифтов
-  let fontsFile = `${app.path.srcFolder}/scss/fonts.scss`;
+  let fontsFile = `${app.path.srcFolder}/scss/modules/fonts.scss`;
   // Проверяем существуют ли файлы шрифтов
   fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
     if (fontsFiles) {
@@ -97,7 +97,7 @@ export const fontsStyle = () => {
       } else {
         // Если файл есть, выводим сообщение
         console.log(
-          "Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!"
+          "Файл scss/modules/fonts.scss уже существует. Для обновления файла нужно его удалить!"
         );
       }
     }
